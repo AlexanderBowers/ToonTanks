@@ -4,6 +4,7 @@
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values
@@ -31,6 +32,14 @@ void ABasePawn::RotateTurret(FVector LookAtTarget)
 	FRotator LookAtRotation = FRotator(0.f, ToTarget.Rotation().Yaw, 0.f);
 	
 	TurretMesh->SetWorldRotation(LookAtRotation);
+}
+void ABasePawn::Fire()
+{
+	FVector SpawnPoint = ProjectileSpawnPoint->GetComponentLocation();
+	if (this->GetWorld())
+	{
+		DrawDebugSphere(this->GetWorld(), SpawnPoint, 50.0, 12.0, FColor::Red, false, 3.f, -1, 2.0f);
+	}
 }
 
 

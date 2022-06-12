@@ -24,6 +24,6 @@ protected:
 private:
 	class ATank* Tank;
 	
-	UPROPERTY(EditAnywhere)
-	float FireRange;
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	float FireRange = 300.f;
 };
