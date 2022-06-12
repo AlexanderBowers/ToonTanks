@@ -34,5 +34,4 @@ private:
 	TSubclassOf<class AProjectile> ProjectileClass;
 
 
-
 };
